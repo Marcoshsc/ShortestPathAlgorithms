@@ -1,6 +1,6 @@
 from typing import List
 
-def getPath(pred: List[int], source: int, target: int):
+def getPath(pred: List[int], source: int, target: int) -> List[int]:
     path: List[int] = [target]
     cost: float = 0
     aux = target

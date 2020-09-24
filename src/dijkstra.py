@@ -1,7 +1,7 @@
-from typing import List
+from typing import List, Tuple
 from queue import PriorityQueue
 
-def djikstraAlgorithm(graph: List[List[float]], origin: int):
+def djikstraAlgorithm(graph: List[List[float]], origin: int) -> Tuple[List[float], List[int]]:
 
     dist: List[float] = [float('inf') for v in graph]
     pred: List[int] = [None for v in graph]
@@ -23,4 +23,4 @@ def djikstraAlgorithm(graph: List[List[float]], origin: int):
                 pred[vertex] = current
                 Q.put((weight, vertex))
     
-    return dist, pred
+    return (dist, pred)
