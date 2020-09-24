@@ -24,4 +24,4 @@ def bellmanFordAlgorithm(graph: List[List[float]], origin: int) -> Tuple[List[fl
         if not trocou:
             break
     
-    return dist, pred
+    return (dist, pred)
