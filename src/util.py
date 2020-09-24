@@ -4,6 +4,8 @@ def getPath(pred: List[int], source: int, target: int) -> List[int]:
     path: List[int] = [target]
     aux = target
     while aux != source:
+        if aux is None:
+            return []
         aux = pred[aux]
         path.insert(0, aux)
     return path
