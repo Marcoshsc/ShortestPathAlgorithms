@@ -7,12 +7,14 @@ def djikstraAlgorithm(graph: List[List[float]], origin: int) -> Tuple[List[float
     pred: List[int] = [None for v in graph]
 
     dist[origin] = 0
-    Q: PriorityQueue = PriorityQueue(len(graph))
+    Q: PriorityQueue = PriorityQueue()
     Q.put((0, origin))
 
-    while Q.qsize() > 0:
+    elements = 1
+    while elements != 0:
         
         element: Tuple[int, float] = Q.get()
+        elements -= 1
         distance: float = element[0]
         current: int = element[1]
         if distance > dist[current]:
@@ -24,5 +26,6 @@ def djikstraAlgorithm(graph: List[List[float]], origin: int) -> Tuple[List[float
                 dist[vertex] = dist[current] + weight
                 pred[vertex] = current
                 Q.put((weight, vertex))
+                elements += 1
     
     return (dist, pred)
