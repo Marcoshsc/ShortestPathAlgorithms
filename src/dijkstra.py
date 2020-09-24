@@ -12,11 +12,13 @@ def djikstraAlgorithm(graph: List[List[float]], origin: int) -> Tuple[List[float
 
     while Q.qsize() > 0:
         
-        distance, current = Q.get()
+        element: Tuple[int, float] = Q.get()
+        distance: float = element[0]
+        current: int = element[1]
         if distance > dist[current]:
             continue
 
-        adjacents = [(c, n) for c, n in enumerate(graph[current]) if n != 0]
+        adjacents: List[Tuple[int, float]] = [(c, n) for c, n in enumerate(graph[current]) if n != 0]
         for vertex, weight in adjacents:
             if dist[vertex] > dist[current] + weight:
                 dist[vertex] = dist[current] + weight
