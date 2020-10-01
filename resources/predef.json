@@ -1,9 +1,0 @@
-{
-    "vertexes": 1000,
-    "edges": 50000,
-    "maxWeight": 1,
-    "minWeight": 10,
-    "source": 0,
-    "target": 5,
-    "algorithm": "Dijkstra"
-}
