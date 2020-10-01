@@ -28,7 +28,7 @@ def runAlgorithms(generateGraph: bool, predef: bool, saveGraph: bool) -> None:
             graph = getAndSaveGraph(saveGraph, data['vertexes'], data['edges'], data['minWeight'], data['maxWeight'])
         else:
             print('Você escolheu entrar com os dados do grafo a ser gerado via terminal. Entre com os dados a seguir:')
-            vertexes = int(input('Digite a quantidade de vértics do grafo: '))
+            vertexes = int(input('Digite a quantidade de vértices do grafo: '))
             edges = int(input('Digite a quantidade de arestas do grafo: '))
             minWeight = float(input('Digite o peso mínimo de uma aresta no grafo: '))
             maxWeight = float(input('Digite o peso máximo de uma aresta no grafo: '))
