@@ -1,5 +1,5 @@
 import argparse
-from runner import runAlgorithms
+from run.runner import runAlgorithms
 
 parser = argparse.ArgumentParser()
 

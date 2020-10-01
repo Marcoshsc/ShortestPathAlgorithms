@@ -1,19 +1,6 @@
 from typing import List, Tuple
 from queue import PriorityQueue
-import time
-from util import getPath
-from abs.genericAlgorithm import GenericAlgorithm, AlgorithmResult
 
-class DijkstraAlgorithm(GenericAlgorithm):
-
-    def execute(self, graph: List[List[float]], source: int, target: int) -> AlgorithmResult:
-        initTime = time.time()
-        dist, pred = djikstraAlgorithm(graph, source)
-        executionTime = time.time() - initTime
-        path = getPath(pred, source, target)
-        cost = dist[target]
-        return AlgorithmResult(path, cost, executionTime)
-        
 
 def djikstraAlgorithm(graph: List[List[float]], origin: int) -> Tuple[List[float], List[int]]:
 

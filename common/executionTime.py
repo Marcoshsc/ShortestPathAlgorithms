@@ -1,8 +1,8 @@
 from typing import Tuple
-from dijkstra import djikstraAlgorithm
-from bellmanFord import bellmanFordAlgorithm, bellmanFordAlgorithmEficient
-from floydWarshall import floydWarshallAlgorithm
-from randomic import getRandomGraph
+from algorithms.dijkstra.implementations import djikstraAlgorithm
+from algorithms.bellmanFord.implementations import bellmanFordAlgorithm, bellmanFordAlgorithmEficient
+from algorithms.floydWarshall.implementations import floydWarshallAlgorithm
+from common.randomic import getRandomGraph
 import time
 
 def getExecutionTime(data: dict) -> Tuple[float, float, float, float]:

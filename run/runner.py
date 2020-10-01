@@ -1,6 +1,7 @@
 import json
 from typing import List
-from randomic import getRandomGraph
+from common.randomic import getRandomGraph
+from common.executionTime import getExecutionTime
 from abs.algorithmFactory import AlgorithmFactory
 
 def getAndSaveGraph(saveGraph: bool, vertexes: int, edges: int, minWeight: float, maxWeight: float) -> List[List[float]]:
@@ -63,3 +64,31 @@ def runAlgorithms(generateGraph: bool, predef: bool, saveGraph: bool) -> None:
     print(f'Menor caminho entre os vértices {source} e {target}: {result.path}')
     print(f'Custo: {result.cost}')
     print(f'Tempo de execução: {result.executionTime}')
+
+
+def compare() -> None:
+    data = []
+
+    with open('resources/dataToCompare.json', 'r') as dataFile:
+        data = json.loads(dataFile.read())
+
+    print(f'Total de {len(data)} registros...')
+    results = {}
+
+    for d in data:
+        vertexes = d['vertex']
+        edges = d['edge']
+        minimum = d['min']
+        maximum = d['max']
+        print(f'Rodando para {vertexes} vértices, {edges} arestas, {minimum} peso mínimo e {maximum} peso máximo...')
+        times = getExecutionTime(d)
+        key = (f'{vertexes}#{edges}#{minimum}#{maximum}')
+        results[key] = {
+            'Djikstra': times[0],
+            'Bellman-Ford': times[1],
+            'Bellman-Ford-Efficient': times[2],
+            'Floyd-Warshall': times[3]
+        }
+
+    with open('resources/results.json', 'w+') as resultsFile:
+        json.dump(results, resultsFile)

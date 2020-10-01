@@ -1,7 +1,7 @@
 from abs.genericAlgorithm import GenericAlgorithm
-from dijkstra import DijkstraAlgorithm
-from bellmanFord import BellmanFordAlgorithm, BellmanFordAlgorithmEfficient
-from floydWarshall import FloydWarshallAlgorithm
+from algorithms.dijkstra.classes import DijkstraAlgorithm
+from algorithms.bellmanFord.classes import BellmanFordAlgorithm, BellmanFordAlgorithmEfficient
+from algorithms.floydWarshall.classes import FloydWarshallAlgorithm
 
 class AlgorithmFactory:
 
