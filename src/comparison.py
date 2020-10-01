@@ -6,7 +6,7 @@ data = []
 with open('resources/dataToCompare.json', 'r') as dataFile:
     data = json.loads(dataFile.read())
 
-print(f'Total of {len(data)} records...')
+print(f'Total de {len(data)} registros...')
 results = {}
 
 for d in data:
@@ -14,7 +14,7 @@ for d in data:
     edges = d['edge']
     minimum = d['min']
     maximum = d['max']
-    print(f'Running for {vertexes} vertexes, {edges} edges, {minimum} minimum and {maximum} maximum...')
+    print(f'Rodando para {vertexes} vértices, {edges} arestas, {minimum} peso mínimo e {maximum} peso máximo...')
     times = getExecutionTime(d)
     key = (f'{vertexes}#{edges}#{minimum}#{maximum}')
     results[key] = {
