@@ -1,5 +1,7 @@
 # Algoritmos de menor caminho
 
+O artigo ao qual este repositório se refere pode ser encontrado [neste repositório](https://github.com/Marcoshsc/MinimumPathAlgorithms/blob/master/article.pdf).
+
 - Autor: [Marcos Henrique](https://github.com/Marcoshsc)
 - Linguagem de Programação: Python
 
