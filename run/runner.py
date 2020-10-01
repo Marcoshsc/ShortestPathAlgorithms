@@ -66,11 +66,31 @@ def runAlgorithms(generateGraph: bool, predef: bool, saveGraph: bool) -> None:
     print(f'Tempo de execução: {result.executionTime}')
 
 
-def compare() -> None:
+def compare(predef: bool) -> None:
     data = []
 
-    with open('resources/dataToCompare.json', 'r') as dataFile:
-        data = json.loads(dataFile.read())
+    if predef:
+        print('Você optou por utilizar os dados definidos no JSON.')
+        with open('resources/dataToCompare.json', 'r') as dataFile:
+            data = json.loads(dataFile.read())
+    else:
+        print('Você optou por inserir os dados via terminal.')
+        i = 1
+        while True:
+            v = int(input(f'Digite o número de vértices do {i} registro: '))
+            a = int(input(f'Digite o número de arestas do {i} registro: '))
+            mi = float(input(f'Digite o peso mínimo do {i} registro: '))
+            ma = float(input(f'Digite o peso máximo do {i} registro: '))
+            ans = str(input('Deseja inserir outro registro? S/N: '))
+            i += 1
+            data.append({
+                'vertex': v,
+                'edge': a,
+                'min': mi,
+                'max': ma
+            })
+            if ans.upper() == 'N':
+                break
 
     print(f'Total de {len(data)} registros...')
     results = {}
