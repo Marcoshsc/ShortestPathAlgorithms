@@ -8,6 +8,7 @@
  1. [Descrição](#descrição)
  2. [Observações](#observações)
  3. [Utilização e Funcionamento](#utilização-e-funcionamento)
+ 4. [Contribuições](#contribuições)
 
 ## Descrição
 
