@@ -73,7 +73,7 @@ Ao final da execução, será gerado um arquivo JSON chamado **results.json**, l
 		}
 	}
 
-Como observa-se acima, os parâmetros inseridos são os identificadores de cada um dos resultados gerados, portanto não se deve inserir um conjunto de parâmetros igual a outro já inserido.
+Como observa-se acima, os parâmetros inseridos são os identificadores de cada um dos resultados gerados, portanto não se deve inserir um conjunto de parâmetros igual a outro já inserido. Um exemplo de resultados pode ser encontrado [aqui](https://github.com/Marcoshsc/MinimumPathAlgorithms/blob/master/resources/results.json).
 
 Exemplos de Uso:
 
