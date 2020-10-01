@@ -1,4 +1,29 @@
 from typing import List, Tuple
+from abs.genericAlgorithm import GenericAlgorithm, AlgorithmResult
+from util import getPath, getCost
+import time
+
+class BellmanFordAlgorithm(GenericAlgorithm):
+
+    def execute(self, graph: List[List[float]], source: int, target: int) -> AlgorithmResult:
+        initTime = time.time()
+        dist, pred = bellmanFordAlgorithm(graph, source)
+        executionTime = time.time() - initTime
+        path = getPath(pred, source, target)
+        cost = dist[target]
+        return AlgorithmResult(path, cost, executionTime)
+
+
+class BellmanFordAlgorithmEfficient(GenericAlgorithm):
+
+    def execute(self, graph: List[List[float]], source: int, target: int) -> AlgorithmResult:
+        initTime = time.time()
+        dist, pred = bellmanFordAlgorithmEficient(graph, source)
+        executionTime = time.time() - initTime
+        path = getPath(pred, source, target)
+        cost = dist[target]
+        return AlgorithmResult(path, cost, executionTime)
+
 
 def bellmanFordAlgorithm(graph: List[List[float]], origin: int) -> Tuple[List[float], List[int]]:
 
