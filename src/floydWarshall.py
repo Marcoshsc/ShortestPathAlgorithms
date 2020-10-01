@@ -1,4 +1,18 @@
 from typing import List, Tuple
+import time
+from util import getPathFromMatrix, getCost
+from abs.genericAlgorithm import GenericAlgorithm, AlgorithmResult
+
+class FloydWarshallAlgorithm(GenericAlgorithm):
+
+    def execute(self, graph: List[List[float]], source: int, target: int) -> AlgorithmResult:
+        initTime = time.time()
+        dist, pred = floydWarshallAlgorithm(graph)
+        executionTime = time.time() - initTime
+        path = getPathFromMatrix(pred, source, target)
+        cost = getCost(dist, path)
+        return AlgorithmResult(path, cost, executionTime)
+
 
 def floydWarshallAlgorithm(graph: List[List[float]]) -> Tuple[List[List[float]], List[List[int]]]:
     dist: List[List[float]] = [[float('inf') for w in graph] for n in graph]
